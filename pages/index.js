@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import Boundry from "src/error/boundry";
-import styles from "../styles/Home.module.css";
+import styles from ".src/components/error/boundryule.css";
+import Boundry from "src/components/error/boundry";
+import React from "react";
 
 export default function Home() {
+  React.useEffect(() => {
+    countVisitorsOfPage("entry-page", "Bosh sahifa");
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -72,3 +76,5 @@ export default function Home() {
     </div>
   );
 }
+
+export async function getStaticProps() {}
