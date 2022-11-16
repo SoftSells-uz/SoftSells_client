@@ -1,8 +1,6 @@
 import { Container, Grid } from "@mui/material";
-import Link from "next/link";
 import React from "react";
 import { StyledBox, StyledNavLink } from "src/StyledComponents";
-import styles from "../styles/Navbar.module.css";
 
 const Navbar = () => {
   return (
