@@ -38,7 +38,8 @@ export const StyledHeaderBox = styled(Box)({
   position: "relative",
   '@media (max-width: 576px)': {
     height: "80vh",
-  }
+  },
+  transition: "2s ease-in"
 });
 
 export const StyledNavbar = styled(Box)({
@@ -155,4 +156,28 @@ export const StyledHeaderParagraph = styled('p')({
   color: "#ddd",
   marginTop: '30px',
   marginBottom: '30px',
+  lineHeight: "25px",
+});
+
+// contact components
+
+export const StyledH1Contact = styled('h1')({
+  fontSize: "28px",
+  fontWeight: 800,
+  marginBottom: "28px",
+  lineHeight: 1,
+});
+
+export const StyledTitleContact = styled('p')({
+  fontWeight: 500,
+  marginBottom: "12px",
+  lineHeight: 1,
+  cursor: 'pointer',
+});
+
+export const StyledPhoneContact = styled('p')({
+  fontWeight: 300,
+  marginBottom: "4px",
+  lineHeight: 1,
+  cursor: 'pointer',
 });

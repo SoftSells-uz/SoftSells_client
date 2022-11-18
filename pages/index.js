@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "src/layouts/Layout";
+import Contact from "../src/components/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <Layout>
         <main>Lorem</main>
+        <Contact />
       </Layout>
     </div>
   );

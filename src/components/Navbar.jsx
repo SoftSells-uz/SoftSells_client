@@ -24,13 +24,11 @@ const Navbar = () => {
 
   const toggleSideBar = () => setOpen(!open);
 
-  console.log(location)
-
   const listenScrollEvent = () => {
     if (window.scrollY > 80) {
-      setColor('#fff')
+      setColor({text: '#000', bg: "#fff"});
     } else {
-      setColor('')
+      setColor('');
     }
   }
 
@@ -39,21 +37,21 @@ const Navbar = () => {
   }, [])
   return (
     <StyledHeaderBox>
-      <StyledNavbar sx={{backgroundColor: color}}>
+      <StyledNavbar sx={{backgroundColor: color ? color.bg : ''}}>
         <StyledLogoWrapper sx={{flex: 1}}>
           <StyledLogo component='img' src='assets/softsells.jpg' />
         </StyledLogoWrapper>
         <StyledNavWrapper sx={{flex: 1}}>
-          <StyledNavLink href='/services'>
+          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
             Xizmatlar
           </StyledNavLink>
-          <StyledNavLink href='/services'>
+          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
             Blog
           </StyledNavLink>
-          <StyledNavLink href='/services'>
+          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
             Portfolio
           </StyledNavLink>
-          <StyledNavLink href='/services'>
+          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
             Biz haqimizda
           </StyledNavLink>
           <StyledContactButton>
