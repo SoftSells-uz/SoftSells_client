@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {Box, Button, Grid, styled} from "@mui/material";
+import { Box, Button, Grid, styled } from "@mui/material";
 
 const center = {
   display: "flex",
@@ -27,23 +27,25 @@ export const StyledNavLink = styled(Link)({
   "&:hover": {
     color: "#ddd",
   },
+  display: "inline-block",
 });
 
 export const StyledHeaderBox = styled(Box)({
   height: "100vh",
   width: "100%",
-  backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/bg_img.jpg')",
-  backgroundSize: 'cover',
+  backgroundImage:
+    "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/bg_img.jpg')",
+  backgroundSize: "cover",
   backgroundPosition: "center",
   position: "relative",
-  '@media (max-width: 576px)': {
-    height: "80vh",
+  "@media (max-width: 576px)": {
+    height: "100vh",
   },
-  transition: "2s ease-in"
+  transition: "2s ease-in",
 });
 
 export const StyledNavbar = styled(Box)({
-  position: "sticky",
+  position: "fixed",
   top: "0",
   left: "0",
   height: "80px",
@@ -52,9 +54,17 @@ export const StyledNavbar = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  '@media (max-width: 576px)': {
+  "@media (max-width: 576px)": {
     paddingInline: "5%",
-  }
+  },
+});
+
+export const StyledCustomContainer = styled(Box)({
+  width: "100%",
+  paddingInline: "10%",
+  "@media (max-width: 576px)": {
+    paddingInline: "5%",
+  },
 });
 
 export const StyledLogoWrapper = styled(Box)({
@@ -74,22 +84,22 @@ export const StyledLogo = styled(Box)({
 // styled navigations
 
 export const StyledNavWrapper = styled(Box)({
-  '@media (max-width: 768px)': {
-    display: "none"
+  "@media (max-width: 768px)": {
+    display: "none",
   },
-  '@media (min-width: 768px)': {
+  "@media (min-width: 768px)": {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     flex: 4,
   },
-  '@media (min-width: 800px)': {
+  "@media (min-width: 800px)": {
     flex: 3,
   },
-  '@media (min-width: 900px)': {
+  "@media (min-width: 900px)": {
     flex: 2,
   },
-  '@media (min-width: 1200px)': {
+  "@media (min-width: 1200px)": {
     flex: 1,
   },
 });
@@ -105,14 +115,14 @@ export const StyledContactButton = styled(Button)({
   "&:hover": {
     color: "#ddd",
     backgroundColor: "#06aa8c",
-  }
+  },
 });
 
 export const HiddenButton = styled(Button)({
-  '@media (max-width: 768px)': {
-    display: "block"
+  "@media (max-width: 768px)": {
+    display: "block",
   },
-  '@media (min-width: 768px)': {
+  "@media (min-width: 768px)": {
     display: "none",
   },
   transition: "1s ease-in",
@@ -123,61 +133,60 @@ export const HiddenButton = styled(Button)({
   padding: 0,
   paddingTop: "3px",
   center,
-})
+});
 
 export const HeaderBody = styled(Grid)({
   position: "absolute",
   top: "80px",
   height: "calc(100vh - 80px)",
   paddingInline: "10%",
-  paddingTop: '10%',
 });
 
-export const StyledHeaderText = styled('h1')({
+export const StyledHeaderText = styled("h1")({
   fontWeight: 700,
-  color: '#fff',
+  color: "#fff",
   fontSize: "56px",
-  '@media (max-width: 576px)': {
+  "@media (max-width: 576px)": {
     fontSize: "26px",
   },
-  '@media (min-width: 576px)': {
+  "@media (min-width: 576px)": {
     fontSize: "36px",
   },
-  '@media (min-width: 768px)': {
+  "@media (min-width: 768px)": {
     fontSize: "46px",
   },
-  '@media (min-width: 992px)': {
+  "@media (min-width: 992px)": {
     fontSize: "56px",
   },
 });
 
-export const StyledHeaderParagraph = styled('p')({
+export const StyledHeaderParagraph = styled("p")({
   fontSize: "18px",
   color: "#ddd",
-  marginTop: '30px',
-  marginBottom: '30px',
+  marginTop: "30px",
+  marginBottom: "30px",
   lineHeight: "25px",
 });
 
 // contact components
 
-export const StyledH1Contact = styled('h1')({
+export const StyledH1Contact = styled("h1")({
   fontSize: "28px",
   fontWeight: 800,
   marginBottom: "28px",
   lineHeight: 1,
 });
 
-export const StyledTitleContact = styled('p')({
+export const StyledTitleContact = styled("p")({
   fontWeight: 500,
   marginBottom: "12px",
   lineHeight: 1,
-  cursor: 'pointer',
+  cursor: "pointer",
 });
 
-export const StyledPhoneContact = styled('p')({
+export const StyledPhoneContact = styled("p")({
   fontWeight: 300,
   marginBottom: "4px",
   lineHeight: 1,
-  cursor: 'pointer',
+  cursor: "pointer",
 });

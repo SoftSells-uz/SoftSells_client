@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   HeaderBody,
   HiddenButton,
@@ -10,73 +10,94 @@ import {
   StyledLogoWrapper,
   StyledNavbar,
   StyledNavLink,
-  StyledNavWrapper
+  StyledNavWrapper,
 } from "src/StyledComponents";
-import {Grid} from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import {useRouter} from "next/router";
+import { Box, Grid } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { useRouter } from "next/router";
+import Message from "./Message";
 
 const Navbar = () => {
-  const [color, setColor] = React.useState('');
+  const [color, setColor] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const divRef = useRef(null);
   const location = useRouter();
 
   const toggleSideBar = () => setOpen(!open);
 
   const listenScrollEvent = () => {
     if (window.scrollY > 80) {
-      setColor({text: '#000', bg: "#fff"});
+      setColor({ text: "#000", bg: "#fff" });
     } else {
-      setColor('');
+      setColor("");
     }
-  }
+  };
 
   React.useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent)
-  }, [])
+    // window.addEventListener("scroll", listenScrollEvent);
+  }, []);
   return (
     <StyledHeaderBox>
-      <StyledNavbar sx={{backgroundColor: color ? color.bg : ''}}>
-        <StyledLogoWrapper sx={{flex: 1}}>
-          <StyledLogo component='img' src='assets/softsells.jpg' />
+      <StyledNavbar>
+        <StyledLogoWrapper sx={{ flex: 1 }}>
+          <StyledLogo component="img" src="assets/softsells.jpg" />
         </StyledLogoWrapper>
-        <StyledNavWrapper sx={{flex: 1}}>
-          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
+        <StyledNavWrapper sx={{ flex: 1 }}>
+          <StyledNavLink
+            href="/services"
+            sx={{ color: color ? color.text : "#fff" }}
+          >
             Xizmatlar
           </StyledNavLink>
-          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
+          <StyledNavLink
+            href="/services"
+            sx={{ color: color ? color.text : "#fff" }}
+          >
             Blog
           </StyledNavLink>
-          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
+          <StyledNavLink
+            href="/services"
+            sx={{ color: color ? color.text : "#fff" }}
+          >
             Portfolio
           </StyledNavLink>
-          <StyledNavLink href='/services' sx={{color: color ? color.text : "#fff"}}>
+          <StyledNavLink
+            href="/services"
+            sx={{ color: color ? color.text : "#fff" }}
+          >
             Biz haqimizda
           </StyledNavLink>
-          <StyledContactButton>
-            Bog'lanish
-          </StyledContactButton>
+          <StyledContactButton>Bog&apos;lanish</StyledContactButton>
         </StyledNavWrapper>
         <HiddenButton onClick={toggleSideBar}>
           {open ? <CloseIcon /> : <MenuIcon />}
         </HiddenButton>
       </StyledNavbar>
       <HeaderBody container>
-        <Grid item xs={12} sm={12} md={6} lg={6}>
-          <StyledHeaderText>
-            Imkoniyatlaringizni biz bilan kengaytiring
-          </StyledHeaderText>
-          <StyledHeaderParagraph>
-            O'z biznesingizning keyingi bosqichlarini jadallik bilan rivojlanib kelayotgan
-            kompaniya bilan birga zabt eting. Bizning xizmatlarimiz orqali biznesingizda
-            darmoadingiz va mijozlaringiz miqdorini oshiring.
-          </StyledHeaderParagraph>
-          <StyledContactButton>
-            Biz haqimizda
-          </StyledContactButton>
+        <Grid
+          item={12}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box component="div" sx={{ textAlign: "center" }}>
+            <StyledHeaderText>
+              Imkoniyatlaringizni biz bilan kengaytiring
+            </StyledHeaderText>
+            <StyledHeaderParagraph sx={{ width: "80%", marginInline: "auto" }}>
+              O&apos;z biznesingizning keyingi bosqichlarini jadallik bilan
+              rivojlanib kelayotgan kompaniya bilan birga zabt eting. Bizning
+              xizmatlarimiz orqali biznesingizda darmoadingiz va mijozlaringiz
+              miqdorini oshiring.
+            </StyledHeaderParagraph>
+            <StyledContactButton>Biz haqimizda</StyledContactButton>
+          </Box>
         </Grid>
       </HeaderBody>
+      <Message />
     </StyledHeaderBox>
   );
 };
