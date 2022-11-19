@@ -20,7 +20,7 @@ const StyledBox = styled(Box)({
 
 const StyledMessageBox = styled(Box)({
   width: "300px",
-  background: "#ddd",
+  background: "#fff",
   position: "absolute",
   right: "55px",
   bottom: 0,
@@ -28,7 +28,7 @@ const StyledMessageBox = styled(Box)({
   "@media (max-width: 576px)": {
     width: "100vw",
     position: "fixed",
-    zIndex: 999,
+    zIndex: "9999 !important",
     left: 0,
     bottom: 0,
   },

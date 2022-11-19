@@ -60,72 +60,76 @@ const Navbar = () => {
     window.addEventListener("scroll", listenScrollEvent);
   }, []);
   return (
-    <StyledHeaderBox>
-      <StyledAppBar position="sticky" props={color}>
-        <CustomToolbar>
-          <StyledLogoWrapper>
-            <StyledLogo
-              component="img"
-              src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
-            />
-          </StyledLogoWrapper>
-          <StyledNavWrapper>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Xizmatlar
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Blog
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Portfolio
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Biz haqimizda
-            </StyledNavLink>
-            <StyledContactButton>Bog&apos;lanish</StyledContactButton>
-          </StyledNavWrapper>
-          <HiddenButton onClick={toggleSideBar}>
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </HiddenButton>
-        </CustomToolbar>
-      </StyledAppBar>
-      <HeaderBody container>
-        <Grid
-          item={12}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Box component="div" sx={{ textAlign: "center" }}>
-            <StyledHeaderText>
-              Imkoniyatlaringizni biz bilan kengaytiring
-            </StyledHeaderText>
-            <StyledHeaderParagraph sx={{ width: "80%", marginInline: "auto" }}>
-              O&apos;z biznesingizning keyingi bosqichlarini jadallik bilan
-              rivojlanib kelayotgan kompaniya bilan birga zabt eting. Bizning
-              xizmatlarimiz orqali biznesingizda darmoadingiz va mijozlaringiz
-              miqdorini oshiring.
-            </StyledHeaderParagraph>
-            <StyledContactButton>Biz haqimizda</StyledContactButton>
-          </Box>
-        </Grid>
-      </HeaderBody>
-      <Message />
-    </StyledHeaderBox>
+    <>
+      <StyledHeaderBox>
+        <StyledAppBar position="sticky" props={color}>
+          <CustomToolbar>
+            <StyledLogoWrapper>
+              <StyledLogo
+                component="img"
+                src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+              />
+            </StyledLogoWrapper>
+            <StyledNavWrapper>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Xizmatlar
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Blog
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Portfolio
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Biz haqimizda
+              </StyledNavLink>
+              <StyledContactButton>Bog&apos;lanish</StyledContactButton>
+            </StyledNavWrapper>
+            <HiddenButton onClick={toggleSideBar}>
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </HiddenButton>
+          </CustomToolbar>
+        </StyledAppBar>
+        <HeaderBody container>
+          <Grid
+            item={12}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box component="div" sx={{ textAlign: "center" }}>
+              <StyledHeaderText>
+                Imkoniyatlaringizni biz bilan kengaytiring
+              </StyledHeaderText>
+              <StyledHeaderParagraph
+                sx={{ width: "80%", marginInline: "auto" }}
+              >
+                O&apos;z biznesingizning keyingi bosqichlarini jadallik bilan
+                rivojlanib kelayotgan kompaniya bilan birga zabt eting. Bizning
+                xizmatlarimiz orqali biznesingizda darmoadingiz va mijozlaringiz
+                miqdorini oshiring.
+              </StyledHeaderParagraph>
+              <StyledContactButton>Biz haqimizda</StyledContactButton>
+            </Box>
+          </Grid>
+        </HeaderBody>
+        <Message />
+      </StyledHeaderBox>
+    </>
   );
 };
 
