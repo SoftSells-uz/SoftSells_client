@@ -91,16 +91,16 @@ export const StyledNavWrapper = styled(Box)({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    flex: 4,
+    width: "80%",
   },
   "@media (min-width: 800px)": {
-    flex: 3,
+    width: "75%",
   },
   "@media (min-width: 900px)": {
-    flex: 2,
+    width: "65%",
   },
   "@media (min-width: 1200px)": {
-    flex: 1,
+    width: "50%",
   },
 });
 

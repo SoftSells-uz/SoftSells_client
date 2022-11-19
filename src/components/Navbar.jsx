@@ -12,11 +12,23 @@ import {
   StyledNavLink,
   StyledNavWrapper,
 } from "src/StyledComponents";
-import { Box, Grid } from "@mui/material";
+import { AppBar, Box, Grid, styled, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 import Message from "./Message";
+
+const StyledAppBar = styled(AppBar)(({ props }) => ({
+  boxShadow: "none",
+  paddingInline: "10%",
+  backgroundColor: props ? props.bg : "transparent",
+  display: "flex",
+  justifyContent: "center",
+  height: "80px",
+  "@media (max-width: 576px)": {
+    paddingInline: "5%",
+  },
+}));
 
 const Navbar = () => {
   const [color, setColor] = React.useState("");
@@ -35,45 +47,56 @@ const Navbar = () => {
   };
 
   React.useEffect(() => {
-    // window.addEventListener("scroll", listenScrollEvent);
+    window.addEventListener("scroll", listenScrollEvent);
   }, []);
   return (
     <StyledHeaderBox>
-      <StyledNavbar>
-        <StyledLogoWrapper sx={{ flex: 1 }}>
-          <StyledLogo component="img" src="assets/softsells.jpg" />
-        </StyledLogoWrapper>
-        <StyledNavWrapper sx={{ flex: 1 }}>
-          <StyledNavLink
-            href="/services"
-            sx={{ color: color ? color.text : "#fff" }}
-          >
-            Xizmatlar
-          </StyledNavLink>
-          <StyledNavLink
-            href="/services"
-            sx={{ color: color ? color.text : "#fff" }}
-          >
-            Blog
-          </StyledNavLink>
-          <StyledNavLink
-            href="/services"
-            sx={{ color: color ? color.text : "#fff" }}
-          >
-            Portfolio
-          </StyledNavLink>
-          <StyledNavLink
-            href="/services"
-            sx={{ color: color ? color.text : "#fff" }}
-          >
-            Biz haqimizda
-          </StyledNavLink>
-          <StyledContactButton>Bog&apos;lanish</StyledContactButton>
-        </StyledNavWrapper>
-        <HiddenButton onClick={toggleSideBar}>
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </HiddenButton>
-      </StyledNavbar>
+      <StyledAppBar position="sticky" props={color}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <StyledLogoWrapper>
+            <StyledLogo
+              component="img"
+              src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+            />
+          </StyledLogoWrapper>
+          <StyledNavWrapper>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Xizmatlar
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Blog
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Portfolio
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Biz haqimizda
+            </StyledNavLink>
+            <StyledContactButton>Bog&apos;lanish</StyledContactButton>
+          </StyledNavWrapper>
+          <HiddenButton onClick={toggleSideBar}>
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </HiddenButton>
+        </Toolbar>
+      </StyledAppBar>
       <HeaderBody container>
         <Grid
           item={12}

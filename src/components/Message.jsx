@@ -71,6 +71,13 @@ const CustomParagraph = styled("p")({
   padding: "4px",
 });
 
+const StyledImage = styled(Box)({
+  width: "40px",
+  height: "40px",
+  borderRadius: "50%",
+  objectFit: "cover",
+});
+
 const Message = () => {
   const [isClicked, setIsCLicked] = React.useState(false);
 
@@ -91,11 +98,9 @@ const Message = () => {
       </ButtonCustom>
       <StyledMessageBox sx={{ display: `${isClicked ? "block" : "none"}` }}>
         <StyledTopBarMessage>
-          <Image
-            src="assets/operator.jpg"
-            width="40px"
-            height="40px"
-            style={{ borderRadius: "50%", objectFit: "cover" }}
+          <StyledImage
+            component="img"
+            src="https://cdn.vectorstock.com/i/1000x1000/03/74/operator-icon-vector-6200374.webp"
             alt="operator_png"
           />
           <StyledFlexBetween>
