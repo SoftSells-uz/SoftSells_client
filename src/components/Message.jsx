@@ -2,6 +2,7 @@ import { Button, styled, Box, TextField } from "@mui/material";
 import React from "react";
 import MessageIcon from "@mui/icons-material/Message";
 import { CancelOutlined } from "@mui/icons-material";
+import Image from "next/image";
 
 const ButtonCustom = styled(Button)(({ customSize }) => ({
   minWidth: customSize,
@@ -90,7 +91,7 @@ const Message = () => {
       </ButtonCustom>
       <StyledMessageBox sx={{ display: `${isClicked ? "block" : "none"}` }}>
         <StyledTopBarMessage>
-          <img
+          <Image
             src="assets/operator.jpg"
             width="40px"
             height="40px"
