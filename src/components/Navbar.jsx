@@ -30,6 +30,16 @@ const StyledAppBar = styled(AppBar)(({ props }) => ({
   },
 }));
 
+const CustomToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  "&": {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+});
+
 const Navbar = () => {
   const [color, setColor] = React.useState("");
   const [open, setOpen] = React.useState(false);
@@ -52,13 +62,7 @@ const Navbar = () => {
   return (
     <StyledHeaderBox>
       <StyledAppBar position="sticky" props={color}>
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <CustomToolbar>
           <StyledLogoWrapper>
             <StyledLogo
               component="img"
@@ -95,7 +99,7 @@ const Navbar = () => {
           <HiddenButton onClick={toggleSideBar}>
             {open ? <CloseIcon /> : <MenuIcon />}
           </HiddenButton>
-        </Toolbar>
+        </CustomToolbar>
       </StyledAppBar>
       <HeaderBody container>
         <Grid

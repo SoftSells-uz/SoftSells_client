@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import Services from "src/components/Services";
 import Layout from "src/layouts/Layout";
 import Contact from "../src/components/Contact";
 
@@ -12,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <main>Lorem</main>
+        <Services />
         <Contact />
       </Layout>
     </div>

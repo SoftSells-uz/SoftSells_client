@@ -171,10 +171,11 @@ export const StyledHeaderParagraph = styled("p")({
 // contact components
 
 export const StyledH1Contact = styled("h1")({
-  fontSize: "28px",
-  fontWeight: 800,
-  marginBottom: "28px",
-  lineHeight: 1,
+  color: "#000",
+  fontSize: "40px",
+  fontWeight: 900,
+  lineHeight: 1.2,
+  marginBottom: "32px",
 });
 
 export const StyledTitleContact = styled("p")({
