@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, styled, TextField } from "@mui/material";
+import { Box, Container, Grid, styled, TextField } from "@mui/material";
 import CustomTextField from "./CustomTextField";
 import {
   StyledH1Contact,
@@ -17,15 +17,29 @@ const StyledInfoText = styled("p")({
   whiteSpace: "pre-wrap",
 });
 
+const MapCard = styled(Box)({
+  width: "100%",
+  height: "100%",
+  "@media (max-width: 900px)": {
+    height: "350px",
+  },
+});
+
 const Contact = () => {
   return (
     <Container>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={5}>
-          <StyledH1Contact>Aloqa</StyledH1Contact>
-          <StyledTitleContact>Toshkent, O&apos;zbekiston</StyledTitleContact>
-          <StyledPhoneContact>+998(97) 429-20-02</StyledPhoneContact>
-          <StyledPhoneContact>+998(93) 247-70-77</StyledPhoneContact>
+          <MapCard>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2997.6489226984477!2d69.24827311542289!3d41.294744679272775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDE3JzQxLjEiTiA2OcKwMTUnMDEuNyJF!5e0!3m2!1sru!2s!4v1668955998496!5m2!1sru!2s"
+              style={{ width: "100%", height: "100%", border: 0 }}
+              allowfullscreen=""
+              title="address"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </MapCard>
         </Grid>
         <Grid item xs={12} sm={12} md={7}>
           <Grid container spacing={3}>

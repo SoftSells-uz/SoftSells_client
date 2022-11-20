@@ -12,7 +12,7 @@ const StyledBox = styled(Grid)({
   },
   cursor: "pointer",
   "&:hover .hoveredImg": {
-    scale: "1.2",
+    scale: "1.1",
   },
 });
 
@@ -48,7 +48,7 @@ const CardWithoutImg = (props) => {
           width="100%"
           height="100%"
           src={props.img}
-          sx={{ objectFit: "cover", transition: ".4s ease-in-out" }}
+          sx={{ objectFit: "cover", transition: ".8s ease-in-out" }}
         />
       </Grid>
       <Grid
