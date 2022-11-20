@@ -2,9 +2,10 @@ import { Box, Grid, styled } from "@mui/material";
 import React from "react";
 import CardWithImg from "../common/cardImg";
 import CardWithoutImg from "../common/card";
+import useWindowSize from "src/hooks/useWindowSize";
 
 const data = {
-  title: "Web dasturlash",
+  title: "Grafik dizayn",
   description:
     "Mijozlaringiz va hamkorlaringiz bilan online aloqalarni web ilovalar yordamida yanada takomillashtirish imkoniyatini qo'ldan boy bermang! Biz sizga bir nechta turdagi web xizmatlarimizni taklif qilamiz. Bizdan quyidagi turdagi web ilovalarni buyurtma qilishingiz mumkin.",
   cases: [
@@ -53,8 +54,23 @@ const StyledDescriptionService = styled("p")({
 });
 
 const Index = () => {
+  const [isLarge, setIsLarge] = React.useState(0);
+  const width = useWindowSize();
+  function getWindow() {
+    if (width < 992) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
+  }
+
+  React.useEffect(() => {
+    getWindow();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
   return (
     <Box component="div">
+      {!isLarge ? <h1>{data.title}</h1> : undefined}
       <StyledDescriptionService>{data.description}</StyledDescriptionService>
       <Grid container spacing={2}>
         {data.cases.map((item) => {

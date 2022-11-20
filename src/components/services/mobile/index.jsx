@@ -2,17 +2,18 @@ import { Box, Grid, styled } from "@mui/material";
 import React from "react";
 import CardWithImg from "../common/cardImg";
 import CardWithoutImg from "../common/card";
+import useWindowSize from "src/hooks/useWindowSize";
 
 const data = {
-  title: "Web dasturlash",
+  title: "Mobil dasturlash",
   description:
-    "Mijozlaringiz va hamkorlaringiz bilan online aloqalarni web ilovalar yordamida yanada takomillashtirish imkoniyatini qo'ldan boy bermang! Biz sizga bir nechta turdagi web xizmatlarimizni taklif qilamiz. Bizdan quyidagi turdagi web ilovalarni buyurtma qilishingiz mumkin.",
+    "Mijozlaringiz va hamkorlaringiz bilan aloqalarni mobil ilovalar yordamida yanada takomillashtirish imkoniyatini qo'ldan boy bermang! Endilikda sizning xizmatlaringizdan istalgan mijoz qo'l telefoni orqali foydalana oladi. Buyurtmalar yana ham soddalashadi va kompaniyangiz uchun passiv daromad manbasi yaratiladi.",
   cases: [
     {
-      title: "Ecommerse saytlar",
+      title: "Mobil do'konlar",
       description:
-        "Ecommerse - sotuv saytlari hisoblanadi. Siz bu turdagi saytlarda onlayn tarzda savdo ishlaringizni olib borishingiz mumkin bo'ladi. Sizda do'kon yokida supermarket bormi va siz mijozlaringiz sonini yanada oshirmoqchimisiz? Unda bizga murojaat qiling!",
-      link: "/web/ecommerse",
+        "Agarda sizda do'konlar bo'lsa va siz uni yanada takomillashtirishni istasangiz, demak sizga aynan mobil ilova kerak bo'ladi. Xaridorlaringiz uyidan chiqmasdan sizning mahsulotingizni sotib olishi mumkin bo'ladi. Bu esa ham sizning ham xaridoringizning vaqtini tejaydi!",
+      link: "/mobile/ecommerse",
     },
     {
       title: "Biznes saytlar",
@@ -53,8 +54,23 @@ const StyledDescriptionService = styled("p")({
 });
 
 const Index = () => {
+  const [isLarge, setIsLarge] = React.useState(0);
+  const width = useWindowSize();
+  function getWindow() {
+    if (width < 992) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
+  }
+
+  React.useEffect(() => {
+    getWindow();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
   return (
     <Box component="div">
+      {!isLarge ? <h1>{data.title}</h1> : undefined}
       <StyledDescriptionService>{data.description}</StyledDescriptionService>
       <Grid container spacing={2}>
         {data.cases.map((item) => {

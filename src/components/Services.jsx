@@ -3,6 +3,8 @@ import React from "react";
 import useWindowSize from "src/hooks/useWindowSize";
 import Web from "./services/web";
 import SMM from "./services/smm";
+import Mobil from "./services/mobile";
+import Grafik from "./services/grafik";
 import TabPanel from "./TabPanel";
 
 function a11yProps(index) {
@@ -132,10 +134,10 @@ const Services = () => {
             <Web />
           </TabPanel>
           <TabPanel value={value} index={1} isMd={isMd}>
-            Item Two
+            <Mobil />
           </TabPanel>
           <TabPanel value={value} index={2} isMd={isMd}>
-            Item Three
+            <Grafik />
           </TabPanel>
           <TabPanel value={value} index={3} isMd={isMd}>
             <SMM />

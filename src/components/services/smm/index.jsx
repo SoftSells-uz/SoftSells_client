@@ -7,7 +7,7 @@ import useWindowSize from "src/hooks/useWindowSize";
 const data = {
   title: "Social Media Marketing",
   description:
-    "Mijozlaringiz va hamkorlaringiz bilan online aloqalarni web ilovalar yordamida yanada takomillashtirish imkoniyatini qo'ldan boy bermang! Biz sizga bir nechta turdagi web xizmatlarimizni taklif qilamiz. Bizdan quyidagi turdagi web ilovalarni buyurtma qilishingiz mumkin.",
+    "SMM(Social Media Marketing) - ijtimoiy tarmoqlarda marketing - bu mahsulotlar, tovarlar va xizmatlarni ijtimoiy tarmoqlarda tanitish, uni yurgizish. Ijtimoiy tarmoqlarda marketing - juda effektiv qurol bo'lib, uning yordamida, ijtimoiy tarmoqlardan, bloglardan, kundaliklardan va forumlardan saytga foydalanuvchilarni jalb etish mumkin.",
   cases: [
     {
       title: "Ecommerse saytlar",
