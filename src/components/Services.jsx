@@ -1,6 +1,7 @@
 import { Box, Container, Grid, styled, Tab, Tabs } from "@mui/material";
 import React from "react";
 import useWindowSize from "src/hooks/useWindowSize";
+import Index from "./services/web";
 import TabPanel from "./TabPanel";
 
 function a11yProps(index) {
@@ -66,19 +67,31 @@ const StyledHeaderTabs = styled("h1")({
 
 const Services = () => {
   const [value, setValue] = React.useState(0);
+  const [isMd, setIsMd] = React.useState(false);
   const windowWidth = useWindowSize();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  function getWindowWidth() {
+    if (windowWidth < 992) {
+      setIsMd(true);
+    } else {
+      setIsMd(false);
+    }
+  }
+
   React.useEffect(() => {
-    console.log(windowWidth);
+    getWindowWidth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [windowWidth]);
+
   return (
     <Container sx={{ my: 4 }}>
       <Grid
         container
         display="flex"
-        flexDirection={windowWidth < 992 ? "column" : "row"}
+        flexDirection={isMd ? "column" : "row"}
         sx={{ width: "100%" }}
       >
         <Grid item xs={12} md={12} lg={12}>
@@ -86,7 +99,7 @@ const Services = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={5} lg={5}>
           <Tabs
-            orientation={windowWidth < 992 ? "horizontal" : "vertical"}
+            orientation={isMd ? "horizontal" : "vertical"}
             variant="scrollable"
             value={value}
             onChange={handleChange}
@@ -100,38 +113,30 @@ const Services = () => {
             sx={{ width: "100%" }}
           >
             <StyledTab
-              isLarge={windowWidth < 992}
+              isLarge={isMd}
               label="Web dasturlash"
               {...a11yProps(0)}
             />
             <StyledTab
-              isLarge={windowWidth < 992}
+              isLarge={isMd}
               label="Mobil dasturlash"
               {...a11yProps(1)}
             />
-            <StyledTab
-              isLarge={windowWidth < 992}
-              label="Grafik dizayn"
-              {...a11yProps(2)}
-            />
-            <StyledTab
-              isLarge={windowWidth < 992}
-              label="SMM"
-              {...a11yProps(3)}
-            />
+            <StyledTab isLarge={isMd} label="Grafik dizayn" {...a11yProps(2)} />
+            <StyledTab isLarge={isMd} label="SMM" {...a11yProps(3)} />
           </Tabs>
         </Grid>
         <Grid item xs={12} sm={12} md={7} lg={7}>
-          <TabPanel value={value} index={0}>
-            Item One
+          <TabPanel value={value} index={0} isMd={isMd}>
+            <Index />
           </TabPanel>
-          <TabPanel value={value} index={1}>
+          <TabPanel value={value} index={1} isMd={isMd}>
             Item Two
           </TabPanel>
-          <TabPanel value={value} index={2}>
+          <TabPanel value={value} index={2} isMd={isMd}>
             Item Three
           </TabPanel>
-          <TabPanel value={value} index={3}>
+          <TabPanel value={value} index={3} isMd={isMd}>
             Item Four
           </TabPanel>
         </Grid>
