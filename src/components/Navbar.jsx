@@ -17,6 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 import Message from "./Message";
+import NavbarDrawer from "./drawers/NavbarDrawer";
 
 const StyledAppBar = styled(AppBar)(({ props }) => ({
   boxShadow: "none",
@@ -41,6 +42,23 @@ const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const divRef = useRef(null);
   const location = useRouter();
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
 
   const toggleSideBar = () => setOpen(!open);
 
@@ -102,6 +120,7 @@ const Navbar = () => {
             <HiddenButton onClick={toggleSideBar}>
               {open ? <CloseIcon /> : <MenuIcon />}
             </HiddenButton>
+            <NavbarDrawer />
           </CustomToolbar>
         </Container>
       </StyledAppBar>

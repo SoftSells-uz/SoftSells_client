@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import InCount from "src/components/InCount";
+import Industry from "src/components/Industry";
 import Services from "src/components/Services";
 import Layout from "src/layouts/Layout";
 import Contact from "../src/components/Contact";
@@ -32,6 +33,7 @@ export default function Home() {
       </Head>
       <Layout>
         <Services />
+        <Industry />
         <InCount />
         <Contact />
       </Layout>
