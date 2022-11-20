@@ -118,9 +118,9 @@ const Navbar = () => {
               <StyledHeaderParagraph
                 sx={{ width: "80%", marginInline: "auto" }}
               >
-                O&apos;z biznesingizning keyingi bosqichlarini jadallik bilan
-                rivojlanib kelayotgan kompaniya bilan birga zabt eting. Bizning
-                xizmatlarimiz orqali biznesingizda darmoadingiz va mijozlaringiz
+                O&apos;z biznesingizning kelajagini jadallik bilan rivojlanib
+                kelayotgan kompaniya bilan birga zabt eting. Bizning
+                xizmatlarimiz orqali biznesingizda daromadingiz va mijozlaringiz
                 miqdorini oshiring.
               </StyledHeaderParagraph>
               <StyledContactButton>Biz haqimizda</StyledContactButton>
