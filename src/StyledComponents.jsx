@@ -42,6 +42,9 @@ export const StyledHeaderBox = styled(Box)({
     height: "100vh",
   },
   transition: "2s ease-in",
+  position: "relative",
+  top: "0",
+  left: "0",
 });
 
 export const StyledNavbar = styled(Box)({

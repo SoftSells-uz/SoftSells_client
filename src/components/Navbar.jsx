@@ -61,47 +61,47 @@ const Navbar = () => {
   }, []);
   return (
     <>
+      <StyledAppBar position="fixed" props={color}>
+        <CustomToolbar>
+          <StyledLogoWrapper>
+            <StyledLogo
+              component="img"
+              src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+            />
+          </StyledLogoWrapper>
+          <StyledNavWrapper>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Xizmatlar
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Blog
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Portfolio
+            </StyledNavLink>
+            <StyledNavLink
+              href="/services"
+              sx={{ color: color ? color.text : "#fff" }}
+            >
+              Biz haqimizda
+            </StyledNavLink>
+            <StyledContactButton>Bog&apos;lanish</StyledContactButton>
+          </StyledNavWrapper>
+          <HiddenButton onClick={toggleSideBar}>
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </HiddenButton>
+        </CustomToolbar>
+      </StyledAppBar>
       <StyledHeaderBox>
-        <StyledAppBar position="sticky" props={color}>
-          <CustomToolbar>
-            <StyledLogoWrapper>
-              <StyledLogo
-                component="img"
-                src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
-              />
-            </StyledLogoWrapper>
-            <StyledNavWrapper>
-              <StyledNavLink
-                href="/services"
-                sx={{ color: color ? color.text : "#fff" }}
-              >
-                Xizmatlar
-              </StyledNavLink>
-              <StyledNavLink
-                href="/services"
-                sx={{ color: color ? color.text : "#fff" }}
-              >
-                Blog
-              </StyledNavLink>
-              <StyledNavLink
-                href="/services"
-                sx={{ color: color ? color.text : "#fff" }}
-              >
-                Portfolio
-              </StyledNavLink>
-              <StyledNavLink
-                href="/services"
-                sx={{ color: color ? color.text : "#fff" }}
-              >
-                Biz haqimizda
-              </StyledNavLink>
-              <StyledContactButton>Bog&apos;lanish</StyledContactButton>
-            </StyledNavWrapper>
-            <HiddenButton onClick={toggleSideBar}>
-              {open ? <CloseIcon /> : <MenuIcon />}
-            </HiddenButton>
-          </CustomToolbar>
-        </StyledAppBar>
         <HeaderBody container>
           <Grid
             item={12}
