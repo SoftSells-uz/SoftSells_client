@@ -1,7 +1,8 @@
 import { Box, Container, Grid, styled, Tab, Tabs } from "@mui/material";
 import React from "react";
 import useWindowSize from "src/hooks/useWindowSize";
-import Index from "./services/web";
+import Web from "./services/web";
+import SMM from "./services/smm";
 import TabPanel from "./TabPanel";
 
 function a11yProps(index) {
@@ -128,7 +129,7 @@ const Services = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={7} lg={7}>
           <TabPanel value={value} index={0} isMd={isMd}>
-            <Index />
+            <Web />
           </TabPanel>
           <TabPanel value={value} index={1} isMd={isMd}>
             Item Two
@@ -137,7 +138,7 @@ const Services = () => {
             Item Three
           </TabPanel>
           <TabPanel value={value} index={3} isMd={isMd}>
-            Item Four
+            <SMM />
           </TabPanel>
         </Grid>
       </Grid>

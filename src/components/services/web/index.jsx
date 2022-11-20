@@ -1,7 +1,8 @@
 import { Box, Grid, styled } from "@mui/material";
 import React from "react";
-import CardWithImg from "./cardImg";
-import CardWithoutImg from "./card";
+import CardWithImg from "../common/cardImg";
+import CardWithoutImg from "../common/card";
+import useWindowSize from "src/hooks/useWindowSize";
 
 const data = {
   title: "Web dasturlash",
@@ -52,9 +53,24 @@ const StyledDescriptionService = styled("p")({
   marginBottom: "10px",
 });
 
-const Index = () => {
+const Index = (prop) => {
+  const [isLarge, setIsLarge] = React.useState(0);
+  const width = useWindowSize();
+  function getWindow() {
+    if (width < 992) {
+      setIsLarge(true);
+    } else {
+      setIsLarge(false);
+    }
+  }
+
+  React.useEffect(() => {
+    getWindow();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
   return (
     <Box component="div">
+      {!isLarge ? <h1>{data.title}</h1> : undefined}
       <StyledDescriptionService>{data.description}</StyledDescriptionService>
       <Grid container spacing={2}>
         {data.cases.map((item) => {

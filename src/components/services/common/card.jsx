@@ -1,6 +1,7 @@
 import { Box, styled } from "@mui/material";
 import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import useWindowSize from "src/hooks/useWindowSize";
 
 const StyledBox = styled(Box)({
   width: "100%",
@@ -32,7 +33,7 @@ const ArrowWrapper = styled(Box)({
 const CardWithImg = (props) => {
   return (
     <StyledBox>
-      <h2 style={{ marginBottom: "5px" }}>{props.title}</h2>
+      <h2 style={{ marginBottom: "5px", color: "#ddd" }}>{props.title}</h2>
       <p>{props.description}</p>
       <ArrowWrapper>
         <ArrowForwardIcon

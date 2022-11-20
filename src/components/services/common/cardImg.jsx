@@ -45,7 +45,7 @@ const CardWithoutImg = (props) => {
         md={8}
         sx={{ padding: "28px", position: "relative" }}
       >
-        <h2 style={{ marginBottom: "5px" }}>{props.title}</h2>
+        <h2 style={{ marginBottom: "5px", color: "#ddd" }}>{props.title}</h2>
         <p>{props.description}</p>
         <ArrowWrapper>
           <ArrowForwardIcon
