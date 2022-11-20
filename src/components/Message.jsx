@@ -12,21 +12,30 @@ const ButtonCustom = styled(Button)(({ customSize }) => ({
   padding: 0,
 }));
 
-const StyledBox = styled(Box)({});
+const StyledBox = styled(Box)({
+  position: "fixed",
+  width: "50px",
+  height: "50px",
+  bottom: "30px",
+  right: "30px",
+  zIndex: "9999 !important",
+});
 
 const StyledMessageBox = styled(Box)({
   width: "300px",
   background: "#fff",
   position: "absolute",
   right: "55px",
-  bottom: 0,
+  bottom: "0",
   transition: "1.5s ease-in",
+  zIndex: "99999 !important",
+  boxShadow: "0px 0px 14px 2px rgba(34, 60, 80, 0.2)",
   "@media (max-width: 576px)": {
     width: "100vw",
     position: "fixed",
-    zIndex: "9999 !important",
     left: 0,
     bottom: 0,
+    boxShadow: "none",
   },
   borderTopLeftRadius: "10px",
   borderTopRightRadius: "10px",
@@ -85,7 +94,12 @@ const Message = () => {
         customSize="50px"
         variant="contained"
         onClick={toggleMessage}
-        sx={{ position: "fixed", bottom: "30px", right: "30px", zIndex: 999 }}
+        sx={{
+          position: "fixed",
+          bottom: "30px",
+          right: "30px",
+          zIndex: "9999 !important",
+        }}
       >
         {isClicked ? (
           <CancelOutlined sx={{ width: "30px", height: "30px" }} />

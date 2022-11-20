@@ -3,6 +3,7 @@ import React from "react";
 import CardWithImg from "../common/cardImg";
 import CardWithoutImg from "../common/card";
 import useWindowSize from "src/hooks/useWindowSize";
+import { StyledDescriptionService } from "../common/StyledCommon";
 
 const data = {
   title: "Social Media Marketing",
@@ -42,19 +43,6 @@ const data = {
     },
   ],
 };
-
-const StyledDescriptionService = styled("p")({
-  color: "#323232",
-  fontSize: "16px",
-  fontWeight: 300,
-  lineHeight: 1.6,
-  maxWidth: "800px",
-  whiteSpace: "pre-wrap",
-  margin: "20px 0",
-  "@media (max-width: 576px)": {
-    marginBottom: "20px",
-  },
-});
 
 const Index = () => {
   const [isLarge, setIsLarge] = React.useState(0);

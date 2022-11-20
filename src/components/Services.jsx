@@ -23,7 +23,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
       alignItems: "flex-start",
       fontWeight: 800,
       fontSize: "24px",
-      width: isLarge ? "auto" : "350px",
+      maxWidth: isLarge ? "auto" : "300px",
       color: "#ddd",
       transition: ".2s ease-in",
       borderTop: !isLarge ? "1px solid #ddd" : "",
@@ -97,7 +97,7 @@ const Services = () => {
         flexDirection={isMd ? "column" : "row"}
         sx={{ width: "100%" }}
       >
-        <Grid item xs={12} md={12} lg={12}>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
           <StyledHeaderTabs>Bizning xizmatlar</StyledHeaderTabs>
         </Grid>
         <Grid
