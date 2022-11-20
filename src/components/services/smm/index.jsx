@@ -50,7 +50,10 @@ const StyledDescriptionService = styled("p")({
   lineHeight: 1.6,
   maxWidth: "800px",
   whiteSpace: "pre-wrap",
-  marginBottom: "10px",
+  margin: "20px 0",
+  "@media (max-width: 576px)": {
+    marginBottom: "20px",
+  },
 });
 
 const Index = () => {
@@ -84,7 +87,7 @@ const Index = () => {
             undefined;
           }
           return (
-            <Grid key={item.link} item xs={12} sm={12} md={6} lg={6}>
+            <Grid key={item.link} item xs={12} sm={6} md={6} lg={6}>
               <CardWithoutImg {...item} />
             </Grid>
           );

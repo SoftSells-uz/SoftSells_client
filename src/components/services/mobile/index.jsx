@@ -12,20 +12,20 @@ const data = {
     {
       title: "Mobil do'konlar",
       description:
-        "Agarda sizda do'konlar bo'lsa va siz uni yanada takomillashtirishni istasangiz, demak sizga aynan mobil ilova kerak bo'ladi. Xaridorlaringiz uyidan chiqmasdan sizning mahsulotingizni sotib olishi mumkin bo'ladi. Bu esa ham sizning ham xaridoringizning vaqtini tejaydi!",
+        "Agarda sizda do'konlar bo'lsa va siz uni yanada takomillashtirishni istasangiz, demak sizga aynan mobil ilova kerak bo'ladi.",
       link: "/mobile/ecommerse",
     },
     {
-      title: "Biznes saytlar",
+      title: "Messenjer dasturlar",
       description:
-        "Sizda insonlar uchun manfaatli bo'lgan biznesingiz bor va siz uni nazorat qilishda qiynalyapsizmi? Unda siz ayni manzildasiz. Biznesingizni raqamlashtirish orqali uni web dastur shaklida sizga yaratib beramiz.",
+        "Telegram va whatsapp kabi dastur sizda ham bo'lishini istaysizmi? Unda o'zingiz uchun shunday messenjer dasturlarga buyurtma bering!",
       link: "/web/business",
     },
     {
-      title: "Blog saytlar",
-      img: "assets/blog_site.jpg",
+      title: "IOS hamda Android uchun",
+      img: "assets/ios_andro.jpg",
       description:
-        "Shaxsiy hayotingizdagi boshqalar uchun manfaat keltiradigan voqealarni yanada yorqinroq tarzda yoritib bormoqchimisiz? Unda biz sizga Blog turidagi saytlarni tavsiya qilamiz.",
+        "Mijozlar talabidan kelib chiqib biz sizga IOS hamda Android tizimida ishlovchi biznes, blog kabi dasturlarni yasab beramiz!",
       link: "/web/blog",
     },
     {
@@ -50,7 +50,10 @@ const StyledDescriptionService = styled("p")({
   lineHeight: 1.6,
   maxWidth: "800px",
   whiteSpace: "pre-wrap",
-  marginBottom: "10px",
+  margin: "20px 0",
+  "@media (max-width: 576px)": {
+    marginBottom: "20px",
+  },
 });
 
 const Index = () => {
@@ -84,7 +87,7 @@ const Index = () => {
             undefined;
           }
           return (
-            <Grid key={item.link} item xs={12} sm={12} md={6} lg={6}>
+            <Grid key={item.link} item xs={12} sm={6} md={6} lg={6}>
               <CardWithoutImg {...item} />
             </Grid>
           );

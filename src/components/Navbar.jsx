@@ -12,7 +12,7 @@ import {
   StyledNavLink,
   StyledNavWrapper,
 } from "src/StyledComponents";
-import { AppBar, Box, Grid, styled, Toolbar } from "@mui/material";
+import { AppBar, Box, Container, Grid, styled, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
@@ -20,14 +20,10 @@ import Message from "./Message";
 
 const StyledAppBar = styled(AppBar)(({ props }) => ({
   boxShadow: "none",
-  paddingInline: "10%",
   backgroundColor: props ? props.bg : "transparent",
   display: "flex",
   justifyContent: "center",
   height: "80px",
-  "@media (max-width: 576px)": {
-    paddingInline: "5%",
-  },
 }));
 
 const CustomToolbar = styled(Toolbar)({
@@ -61,45 +57,53 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <StyledAppBar position="fixed" props={color}>
-        <CustomToolbar>
-          <StyledLogoWrapper>
-            <StyledLogo
-              component="img"
-              src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
-            />
-          </StyledLogoWrapper>
-          <StyledNavWrapper>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Xizmatlar
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Blog
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Portfolio
-            </StyledNavLink>
-            <StyledNavLink
-              href="/services"
-              sx={{ color: color ? color.text : "#fff" }}
-            >
-              Biz haqimizda
-            </StyledNavLink>
-            <StyledContactButton>Bog&apos;lanish</StyledContactButton>
-          </StyledNavWrapper>
-          <HiddenButton onClick={toggleSideBar}>
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </HiddenButton>
-        </CustomToolbar>
+      <StyledAppBar
+        position="fixed"
+        props={color}
+        sx={{
+          boxShadow: color ? "0px 0px 47px -8px rgba(34, 60, 80, 0.2)" : "",
+        }}
+      >
+        <Container>
+          <CustomToolbar>
+            <StyledLogoWrapper>
+              <StyledLogo
+                component="img"
+                src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+              />
+            </StyledLogoWrapper>
+            <StyledNavWrapper>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Xizmatlar
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Blog
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Portfolio
+              </StyledNavLink>
+              <StyledNavLink
+                href="/services"
+                sx={{ color: color ? color.text : "#fff" }}
+              >
+                Biz haqimizda
+              </StyledNavLink>
+              <StyledContactButton>Bog&apos;lanish</StyledContactButton>
+            </StyledNavWrapper>
+            <HiddenButton onClick={toggleSideBar}>
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </HiddenButton>
+          </CustomToolbar>
+        </Container>
       </StyledAppBar>
       <StyledHeaderBox>
         <HeaderBody container>
@@ -118,10 +122,9 @@ const Navbar = () => {
               <StyledHeaderParagraph
                 sx={{ width: "80%", marginInline: "auto" }}
               >
-                O&apos;z biznesingizning kelajagini jadallik bilan rivojlanib
-                kelayotgan kompaniya bilan birga zabt eting. Bizning
-                xizmatlarimiz orqali biznesingizda daromadingiz va mijozlaringiz
-                miqdorini oshiring.
+                Biznesingizning kelajagini jadallik bilan rivojlanib kelayotgan
+                kompaniya bilan birga zabt eting. Bizning xizmatlarimiz orqali
+                biznesingizda daromadingiz va mijozlaringiz miqdorini oshiring.
               </StyledHeaderParagraph>
               <StyledContactButton>Biz haqimizda</StyledContactButton>
             </Box>

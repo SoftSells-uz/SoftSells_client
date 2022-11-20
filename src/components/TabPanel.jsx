@@ -10,6 +10,7 @@ const TabPanel = (props) => {
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
+      style={{ backgroundColor: "#f8f8f8", padding: "10px 0" }}
       {...other}
     >
       {value === index && (

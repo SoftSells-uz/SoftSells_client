@@ -12,7 +12,7 @@ const data = {
     {
       title: "Ecommerse saytlar",
       description:
-        "Ecommerse - sotuv saytlari hisoblanadi. Siz bu turdagi saytlarda onlayn tarzda savdo ishlaringizni olib borishingiz mumkin bo'ladi. Sizda do'kon yokida supermarket bormi va siz mijozlaringiz sonini yanada oshirmoqchimisiz? Unda bizga murojaat qiling!",
+        "Ecommerse - sotuv saytlari hisoblanadi. Siz bu turdagi saytlarda onlayn tarzda savdo ishlaringizni olib borishingiz mumkin. Sizda do'kon yoki supermarket bormi va siz mijozlaringiz sonini yanada oshirmoqchimisiz? Unda bizga murojaat qiling!",
       link: "/web/ecommerse",
     },
     {
@@ -31,13 +31,13 @@ const data = {
     {
       title: "Portfolio saytlar",
       description:
-        "Siz san'atning biror sohasida iqtidorlimisiz? Qilgan ishlaringizdan namunalarni o'zingiz uchun tayyorlangan web saytda saqlashni istaysizmi? Unda to'g'ri manzildasiz.",
+        "Siz san'atning biror sohasida iqtidorlimisiz? Ijod namunalaringizni o'zingiz uchun tayyorlangan web saytda saqlashni istaysizmi? Unda to'g'ri manzildasiz.",
       link: "/web/portfolio",
     },
     {
       title: "Siz istagan tur",
       description:
-        "O'zingizda saytingiz uchun ajoyib g'oyalar bormi? Unda bu g'oyalarni biz bilan real hayotga ko'chiring. Biz bilan o'z shaxsiy web saytingizga ega bo'ling!",
+        "Saytingiz uchun ajoyib g'oyalar bormi? Unda bu g'oyalarni biz bilan real hayotga ko'chiring. Biz bilan o'z shaxsiy web saytingizga ega bo'ling!",
       link: "/web/other",
     },
   ],
@@ -50,7 +50,10 @@ const StyledDescriptionService = styled("p")({
   lineHeight: 1.6,
   maxWidth: "800px",
   whiteSpace: "pre-wrap",
-  marginBottom: "10px",
+  margin: "20px 0",
+  "@media (max-width: 576px)": {
+    marginBottom: "20px",
+  },
 });
 
 const Index = (prop) => {
@@ -84,7 +87,7 @@ const Index = (prop) => {
             undefined;
           }
           return (
-            <Grid key={item.link} item xs={12} sm={12} md={6} lg={6}>
+            <Grid key={item.link} item xs={12} sm={6} md={6} lg={6}>
               <CardWithoutImg {...item} />
             </Grid>
           );

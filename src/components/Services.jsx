@@ -100,7 +100,15 @@ const Services = () => {
         <Grid item xs={12} md={12} lg={12}>
           <StyledHeaderTabs>Bizning xizmatlar</StyledHeaderTabs>
         </Grid>
-        <Grid item xs={12} sm={12} md={5} lg={5}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={5}
+          lg={5}
+          display="flex"
+          sx={{ padding: "10px 0" }}
+        >
           <Tabs
             orientation={isMd ? "horizontal" : "vertical"}
             variant="scrollable"
