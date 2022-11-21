@@ -10,12 +10,12 @@ import {
 import React from "react";
 import { InboxIcon, MailIcon } from "@mui/icons-material";
 
-const list = (anchor) => (
+const list = (toggleDrawer) => (
   <Box
-    sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+    sx={{ width: 250 }}
     role="presentation"
-    onClick={toggleDrawer(anchor, false)}
-    onKeyDown={toggleDrawer(anchor, false)}
+    onClick={toggleDrawer(false)}
+    onKeyDown={toggleDrawer(false)}
   >
     <List>
       {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (

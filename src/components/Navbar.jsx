@@ -18,6 +18,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 import Message from "./Message";
 import NavbarDrawer from "./drawers/NavbarDrawer";
+// import NavbarDrawer from "./drawers/NavbarDrawer";
 
 const StyledAppBar = styled(AppBar)(({ props }) => ({
   boxShadow: "none",
@@ -42,14 +43,9 @@ const Navbar = () => {
   const [open, setOpen] = React.useState(false);
   const divRef = useRef(null);
   const location = useRouter();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const [state, setState] = React.useState(false);
 
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (open) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -57,10 +53,9 @@ const Navbar = () => {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setState(open);
+    setOpen(!open);
   };
-
-  const toggleSideBar = () => setOpen(!open);
 
   const listenScrollEvent = () => {
     if (window.scrollY > 80) {
@@ -117,10 +112,10 @@ const Navbar = () => {
               </StyledNavLink>
               <StyledContactButton>Bog&apos;lanish</StyledContactButton>
             </StyledNavWrapper>
-            <HiddenButton onClick={toggleSideBar}>
-              {open ? <CloseIcon /> : <MenuIcon />}
+            <HiddenButton onClick={toggleDrawer(true)}>
+              {!open ? <CloseIcon /> : <MenuIcon />}
             </HiddenButton>
-            <NavbarDrawer />
+            <NavbarDrawer toggleDrawer={toggleDrawer} state={state} />
           </CustomToolbar>
         </Container>
       </StyledAppBar>
