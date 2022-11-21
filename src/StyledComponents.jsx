@@ -181,3 +181,5 @@ export const StyledPhoneContact = styled('p')({
   lineHeight: 1,
   cursor: 'pointer',
 });
+
+export const StyledTabBar = styled('div')({})
