@@ -35,16 +35,24 @@ const StyledCarouselItemWrapper = styled(Box)({
     },
   },
   "&:hover .text-wrapper": {
-    bottom: "250px",
+    height: "auto",
+    bottom: "10px",
   },
   "@media (max-width: 576px)": {
     "&:hover .text-wrapper": {
-      bottom: "200px",
+      height: "auto",
+      bottom: "10px",
+    },
+  },
+  "@media (max-width: 700px)": {
+    "&:hover .text-wrapper": {
+      height: "auto",
+      bottom: "10px",
     },
   },
   "&:hover p": {
     visibility: "visible",
-    wordWrap: "wrap",
+    wordWrap: "break-word",
     opacity: 1,
   },
   "&:hover a": {
@@ -54,12 +62,12 @@ const StyledCarouselItemWrapper = styled(Box)({
 });
 
 const TextWrapperDiv = styled(Box)({
-  height: "100px",
   width: "100%",
+  height: "100px",
   background: "transparent",
   color: "#fff",
   position: "absolute",
-  bottom: "0",
+  bottom: "50px",
   transition: ".5s ease-in",
   padding: "30px",
   "@media (max-width: 576px)": {
@@ -107,7 +115,6 @@ const Carouseltem = (props) => {
   useEffect(() => {
     divRef.current.addEventListener("mouseover" || "click", () => {
       bgChanger(img);
-      console.log("mouse is over", link);
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
