@@ -1,6 +1,7 @@
 import { Box, styled } from "@mui/material";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
+import Carouseltem from "./items/Carouseltem";
 
 const rowData = [
   {
@@ -45,50 +46,63 @@ const MainWrapperWithBg = styled(Box)(({ bgImage }) => ({
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   height: "740px",
+  transition: ".5s ease-in-out",
 }));
+
+let settings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        infinite: true,
+      },
+    },
+  ],
+};
 
 const Industry = () => {
   const [currentImg, setCurrentImg] = React.useState(
     "assets/online_market.png"
   );
 
-  let settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const changeBg = (img) => {
+    setCurrentImg(img);
   };
+
   return (
     <MainWrapperWithBg bgImage={currentImg}>
-      <Slider {...settings}></Slider>
+      <Slider {...settings}>
+        {rowData?.map((data) => {
+          return <Carouseltem bgChanger={changeBg} key={data.link} {...data} />;
+        })}
+      </Slider>
     </MainWrapperWithBg>
   );
 };

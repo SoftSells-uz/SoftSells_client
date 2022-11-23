@@ -41,8 +41,7 @@ const CustomToolbar = styled(Toolbar)({
 const Navbar = () => {
   const [color, setColor] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const divRef = useRef(null);
-  const location = useRouter();
+
   const [state, setState] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
