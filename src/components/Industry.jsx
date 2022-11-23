@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, Button, styled } from "@mui/material";
 import React, { useEffect, useRef } from "react";
 import Slider from "react-slick";
 import Carouseltem from "./items/Carouseltem";
@@ -42,6 +42,7 @@ const rowData = [
 ];
 
 const MainWrapperWithBg = styled(Box)(({ bgImage }) => ({
+  width: "100%",
   backgroundImage: `url(${bgImage})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -49,13 +50,37 @@ const MainWrapperWithBg = styled(Box)(({ bgImage }) => ({
   transition: ".5s ease-in-out",
 }));
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ right: "10px", zIndex: 1000, fontSize: "30px" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, left: "10px", zIndex: 1000 }}
+      onClick={onClick}
+    />
+  );
+}
+
 let settings = {
-  dots: true,
+  dots: false,
   infinite: false,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
   initialSlide: 0,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
   responsive: [
     {
       breakpoint: 1200,

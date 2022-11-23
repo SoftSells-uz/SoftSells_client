@@ -5,13 +5,11 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const StyledCarouselItemWrapper = styled(Box)({
   width: "100%",
   height: "740px",
-  background: "rgba(196, 178, 178, 0.07)",
-  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-  backdropFilter: "blur(0.9px)",
-  "-webkit-backdrop-filter": "blur(0.9px)",
   position: "relative",
+  background: "transparent",
   borderRight: "1px solid rgba(196, 178, 178, 0.66)",
   borderLeft: "1px solid rgba(196, 178, 178, 0.66)",
+  cursor: "pointer",
   zIndex: 999,
   "&:first-child": {
     borderLeft: "none",
@@ -24,12 +22,8 @@ const StyledCarouselItemWrapper = styled(Box)({
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-end",
-  padding: "0 25px",
   "&:hover": {
-    background: "rgba(196, 178, 178, 0.18)",
-    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-    backdropFilter: "blur(2.1px)",
-    "-webkit-backdrop-filter": "blur(2.1px)",
+    background: "linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.64))",
     borderRight: "1px solid rgba(196, 178, 178, 0.66)",
     borderLeft: "1px solid rgba(196, 178, 178, 0.66)",
     zIndex: 999,
@@ -41,10 +35,16 @@ const StyledCarouselItemWrapper = styled(Box)({
     },
   },
   "&:hover .text-wrapper": {
-    bottom: "100px",
+    bottom: "250px",
+  },
+  "@media (max-width: 576px)": {
+    "&:hover .text-wrapper": {
+      bottom: "200px",
+    },
   },
   "&:hover p": {
     visibility: "visible",
+    wordWrap: "wrap",
     opacity: 1,
   },
   "&:hover a": {
@@ -61,20 +61,33 @@ const TextWrapperDiv = styled(Box)({
   position: "absolute",
   bottom: "0",
   transition: ".5s ease-in",
+  padding: "30px",
+  "@media (max-width: 576px)": {
+    padding: "10px",
+  },
 });
 
 const StyledH1Slider = styled("h1")({
+  width: "100%",
   fontSize: "32px",
   fontWeight: 900,
   lineHeight: 1.2,
   margin: "10px 0",
+  "@media (max-width: 576px)": {
+    fontSize: "28px",
+  },
 });
 
 const StyledParagraphSlider = styled("p")({
   fontSize: "20px",
   lineHeight: "25px",
   visibility: "hidden",
+  wordWrap: "break-word",
   opacity: 0,
+  "@media (max-width: 576px)": {
+    fontSize: "18px",
+    lineHeight: "20px",
+  },
 });
 
 const StyledLink = styled("a")({
@@ -92,10 +105,12 @@ const Carouseltem = (props) => {
   const divRef = useRef(null);
 
   useEffect(() => {
-    divRef.current.addEventListener("mouseover", () => {
+    divRef.current.addEventListener("mouseover" || "click", () => {
       bgChanger(img);
       console.log("mouse is over", link);
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <StyledCarouselItemWrapper ref={divRef}>
