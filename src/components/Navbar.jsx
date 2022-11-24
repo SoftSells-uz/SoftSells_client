@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import {
   HeaderBody,
   HiddenButton,
@@ -18,7 +18,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 import Message from "./Message";
 import NavbarDrawer from "./drawers/NavbarDrawer";
-// import NavbarDrawer from "./drawers/NavbarDrawer";
 
 const StyledAppBar = styled(AppBar)(({ props }) => ({
   boxShadow: "none",
@@ -41,8 +40,8 @@ const CustomToolbar = styled(Toolbar)({
 const Navbar = () => {
   const [color, setColor] = React.useState("");
   const [open, setOpen] = React.useState(false);
-
   const [state, setState] = React.useState(false);
+  const router = useRouter();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -82,6 +81,7 @@ const Navbar = () => {
               <StyledLogo
                 component="img"
                 src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+                onClick={() => router.push("/")}
               />
             </StyledLogoWrapper>
             <StyledNavWrapper>
