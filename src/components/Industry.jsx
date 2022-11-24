@@ -88,7 +88,6 @@ let settings = {
         slidesToShow: 4,
         slidesToScroll: 1,
         infinite: true,
-        dots: true,
       },
     },
     {
@@ -97,7 +96,6 @@ let settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
-        dots: true,
       },
     },
     {

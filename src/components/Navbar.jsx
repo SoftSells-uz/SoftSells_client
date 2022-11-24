@@ -92,19 +92,19 @@ const Navbar = () => {
                 Xizmatlar
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/blog"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Blog
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/portfolio"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Portfolio
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/about-us"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Biz haqimizda
