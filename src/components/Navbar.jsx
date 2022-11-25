@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import {
   HeaderBody,
   HiddenButton,
@@ -18,7 +18,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 import Message from "./Message";
 import NavbarDrawer from "./drawers/NavbarDrawer";
-// import NavbarDrawer from "./drawers/NavbarDrawer";
 
 const StyledAppBar = styled(AppBar)(({ props }) => ({
   boxShadow: "none",
@@ -41,9 +40,8 @@ const CustomToolbar = styled(Toolbar)({
 const Navbar = () => {
   const [color, setColor] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const divRef = useRef(null);
-  const location = useRouter();
   const [state, setState] = React.useState(false);
+  const router = useRouter();
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -83,6 +81,7 @@ const Navbar = () => {
               <StyledLogo
                 component="img"
                 src={color ? "assets/black_logo.jpg" : "assets/softsells.jpg"}
+                onClick={() => router.push("/")}
               />
             </StyledLogoWrapper>
             <StyledNavWrapper>
@@ -93,19 +92,19 @@ const Navbar = () => {
                 Xizmatlar
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/blog"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Blog
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/portfolio"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Portfolio
               </StyledNavLink>
               <StyledNavLink
-                href="/services"
+                href="/about-us"
                 sx={{ color: color ? color.text : "#fff" }}
               >
                 Biz haqimizda
