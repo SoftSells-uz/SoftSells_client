@@ -8,37 +8,37 @@ import { StyledDescriptionService } from "../common/StyledCommon";
 const data = {
   title: "Grafik dizayn",
   description:
-    "Mijozlaringiz va hamkorlaringiz bilan online aloqalarni web ilovalar yordamida yanada takomillashtirish imkoniyatini qo'ldan boy bermang! Biz sizga bir nechta turdagi web xizmatlarimizni taklif qilamiz. Bizdan quyidagi turdagi web ilovalarni buyurtma qilishingiz mumkin.",
+    "Grafik dizayn - bu professionallar xabarlarni yetkazish uchun vizual kontent yaratadigan hunarmandchilik.",
   cases: [
     {
-      title: "Ecommerse saytlar",
+      title: "Mijoz bilan aloqa",
       description:
-        "Ecommerse - sotuv saytlari hisoblanadi. Siz bu turdagi saytlarda onlayn tarzda savdo ishlaringizni olib borishingiz mumkin bo'ladi. Sizda do'kon yokida supermarket bormi va siz mijozlaringiz sonini yanada oshirmoqchimisiz? Unda bizga murojaat qiling!",
-      link: "/web/ecommerse",
+        "Mijoz bilan ortiqcha ovoragarchiliklarsiz tushunarli va sodda aloqalar uchun Grafik Dizayn ayni muddao. Barcha kerakli detallardan ustalik bilan foydalanish orqali mijozga sodda holda tushintirish imkoniyati.",
+      link: "/graphic/connection",
     },
     {
-      title: "Biznes saytlar",
+      title: "Vizual aloqa",
       description:
-        "Sizda insonlar uchun manfaatli bo'lgan biznesingiz bor va siz uni nazorat qilishda qiynalyapsizmi? Unda siz ayni manzildasiz. Biznesingizni raqamlashtirish orqali uni web dastur shaklida sizga yaratib beramiz.",
-      link: "/web/business",
+        "Vizual qabul qilingan ma'lumot ko'proq esda qoladi. Shu bilan bir o'rinda ham rasmli ham matnli ma'lumotni bittada yetkazish va mijozning ishonchini qozonish imkoniyatini o'z brendingizda sinab ko'ring. .",
+      link: "/graphic/business",
     },
     {
-      title: "Blog saytlar",
-      img: "assets/blog_site.jpg",
+      title: "Zamonaviy san'at",
+      img: "assets/grafik_dizayn.jpg",
       description:
-        "Shaxsiy hayotingizdagi boshqalar uchun manfaat keltiradigan voqealarni yanada yorqinroq tarzda yoritib bormoqchimisiz? Unda biz sizga Blog turidagi saytlarni tavsiya qilamiz.",
-      link: "/web/blog",
+        "Grafik dizayn aloqa dizayni sifatida ham tanilgan va Grafik dizaynerlar asosan vizual kommunikatorlardir. Ular vizual kontseptsiyalarni, odatda, grafik dizayn dasturlari orqali hayotga olib keladi va matn, grafik va tasvirlar orqali iste'molchilarni xabardor qiladi yoki jalb qiladi.",
+      link: "/graphic/blog",
     },
     {
-      title: "Portfolio saytlar",
+      title: "Reallikdan real chizmalarga",
       description:
-        "Siz san'atning biror sohasida iqtidorlimisiz? Qilgan ishlaringizdan namunalarni o'zingiz uchun tayyorlangan web saytda saqlashni istaysizmi? Unda to'g'ri manzildasiz.",
+        "Kompaniya brendini ommaga e'lon qilish va ranglari uyg'unligidan mohirona foydalanish orqali real biznesni raqamli rasmlarga almashtirishdan tortib kichik detallarigacha e'tibor.",
       link: "/web/portfolio",
     },
     {
-      title: "Siz istagan tur",
+      title: "Detallargacha e'tibor",
       description:
-        "O'zingizda saytingiz uchun ajoyib g'oyalar bormi? Unda bu g'oyalarni biz bilan real hayotga ko'chiring. Biz bilan o'z shaxsiy web saytingizga ega bo'ling!",
+        "Har bir buyurtmaning vizual jozibali va yaxshi tuzilgan dizaynlarni yaratish uchun chiziqlar, rang, shakl, bo'shliq, tekstura, tipografiya, masshtab, ustunlik va urg'u va uyg'unliklarigacha e'tibor qaraitladi.",
       link: "/web/other",
     },
   ],

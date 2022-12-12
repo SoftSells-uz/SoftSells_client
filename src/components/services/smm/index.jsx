@@ -11,28 +11,28 @@ const data = {
     "SMM(Social Media Marketing) - ijtimoiy tarmoqlarda marketing - bu mahsulotlar, tovarlar va xizmatlarni ijtimoiy tarmoqlarda tanitish, uni yurgizish. Ijtimoiy tarmoqlarda marketing - juda effektiv qurol bo'lib, uning yordamida, ijtimoiy tarmoqlardan, bloglardan, kundaliklardan va forumlardan saytga foydalanuvchilarni jalb etish mumkin.",
   cases: [
     {
-      title: "Ecommerse saytlar",
+      title: "Asosiy omil",
       description:
-        "Ecommerse - sotuv saytlari hisoblanadi. Siz bu turdagi saytlarda onlayn tarzda savdo ishlaringizni olib borishingiz mumkin bo'ladi. Sizda do'kon yokida supermarket bormi va siz mijozlaringiz sonini yanada oshirmoqchimisiz? Unda bizga murojaat qiling!",
+        "Bugungi kunda ijtimoiy tarmoqlarda o'z sahifangiz bolishi omma orasida brend tanilishi uchun asosiy omillardan biri!",
       link: "/web/ecommerse",
     },
     {
-      title: "Biznes saytlar",
+      title: "Brendni tanitish",
       description:
-        "Sizda insonlar uchun manfaatli bo'lgan biznesingiz bor va siz uni nazorat qilishda qiynalyapsizmi? Unda siz ayni manzildasiz. Biznesingizni raqamlashtirish orqali uni web dastur shaklida sizga yaratib beramiz.",
+        "Faol auditoriyaga ega ijtimoiy tarmoqlardan doimiy mijozlar oqimini olib kelish va ularni mavjud brend bilan tanishtirish!.",
       link: "/web/business",
     },
     {
-      title: "Blog saytlar",
-      img: "assets/blog_site.jpg",
+      title: "Savdodagi barqarorlik",
+      img: "assets/smm.png",
       description:
-        "Shaxsiy hayotingizdagi boshqalar uchun manfaat keltiradigan voqealarni yanada yorqinroq tarzda yoritib bormoqchimisiz? Unda biz sizga Blog turidagi saytlarni tavsiya qilamiz.",
+        "O'z brendini mediada doimiy faol holda ushlab tura oladigan kompaniyalar doimiy daromadga ega bo'lishadi. Mijozlar sonining ortishi kompaniya daromadi va kelajagiga katta ta'sir o'tkazadi.",
       link: "/web/blog",
     },
     {
-      title: "Portfolio saytlar",
+      title: "Mijozlarning sodiqligi",
       description:
-        "Siz san'atning biror sohasida iqtidorlimisiz? Qilgan ishlaringizdan namunalarni o'zingiz uchun tayyorlangan web saytda saqlashni istaysizmi? Unda to'g'ri manzildasiz.",
+        "Ijtimoiy tarmoqlarda kompaniyangiz haqida barcha malumotlar yoritilishi qulay aloqa, xizmatlaringiz natijalari, sifatli kontent orqali mijozlar sodiqligi.",
       link: "/web/portfolio",
     },
     {
