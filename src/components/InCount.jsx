@@ -1,6 +1,6 @@
 import { Box, Container, Grid, styled } from "@mui/material";
 import React from "react";
-import useWindowSize from "src/hooks/useWindowSize";
+import useWindowSize from "hooks/useWindowSize";
 import Counter from "./Counter";
 
 const StyledHeaderCounters = styled("h2")({

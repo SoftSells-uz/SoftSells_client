@@ -11,7 +11,7 @@ import {
   StyledNavbar,
   StyledNavLink,
   StyledNavWrapper,
-} from "src/StyledComponents";
+} from "StyledComponents";
 import { AppBar, Box, Container, Grid, styled, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";

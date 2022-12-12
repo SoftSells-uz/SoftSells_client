@@ -2,7 +2,7 @@ import { Box, Grid, styled } from "@mui/material";
 import React from "react";
 import CardWithImg from "../common/cardImg";
 import CardWithoutImg from "../common/card";
-import useWindowSize from "src/hooks/useWindowSize";
+import useWindowSize from "hooks/useWindowSize";
 import { StyledDescriptionService } from "../common/StyledCommon";
 
 const data = {
@@ -30,9 +30,9 @@ const data = {
       link: "/web/blog",
     },
     {
-      title: "Portfolio saytlar",
+      title: "Siz istagan mobil ilovalar",
       description:
-        "Siz san'atning biror sohasida iqtidorlimisiz? Qilgan ishlaringizdan namunalarni o'zingiz uchun tayyorlangan web saytda saqlashni istaysizmi? Unda to'g'ri manzildasiz.",
+        "O'ylab qo'ygan biznes rejangizni mobil olamga ko'chirmoqchimisiz? Unda biz bilan birga o'z ilovangizni noldan boshlab quring.",
       link: "/web/portfolio",
     },
     {

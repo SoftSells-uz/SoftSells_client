@@ -1,6 +1,6 @@
 import { Box, Container, Grid, styled, Tab, Tabs } from "@mui/material";
 import React from "react";
-import useWindowSize from "src/hooks/useWindowSize";
+import useWindowSize from "hooks/useWindowSize";
 import Web from "./services/web";
 import SMM from "./services/smm";
 import Mobil from "./services/mobile";

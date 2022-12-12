@@ -2,7 +2,7 @@ import { Box, Grid, styled } from "@mui/material";
 import React from "react";
 import CardWithImg from "../common/cardImg";
 import CardWithoutImg from "../common/card";
-import useWindowSize from "src/hooks/useWindowSize";
+import useWindowSize from "hooks/useWindowSize";
 import { StyledDescriptionService } from "../common/StyledCommon";
 
 const data = {
