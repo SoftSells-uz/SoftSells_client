@@ -116,10 +116,8 @@ const Message = () => {
           />
           <StyledFlexBetween>
             <StyledFlexColumn>
-              <StyledOperatorName fontWeight="600">Abror</StyledOperatorName>
-              <StyledOperatorName fontWeight="500">
-                Navbatchi operator
-              </StyledOperatorName>
+              <StyledOperatorName fontWeight="600">Operator</StyledOperatorName>
+              <StyledOperatorName fontWeight="500"></StyledOperatorName>
             </StyledFlexColumn>
 
             <ButtonCustom
